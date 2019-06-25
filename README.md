@@ -58,3 +58,11 @@ keycodes.atjayjo.com for reference
 READING DATA FROM DIFFERENT HTML INPUT TYPES
 
 ---
+
+---
+
+INIT
+
+---
+
+Creating a public initialization function to setup private event listeners to make sure they are executed.

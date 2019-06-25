@@ -38,7 +38,22 @@ var UIController = (function () {
 // control what happens to each event, then delegate tasks to the controllers
 var controller = (function (budgetCtrl, UICtrl) {
 
-    var DOM = UICtrl.getDOMStrings();
+    var setupEventListners = function () {
+        var DOM = UICtrl.getDOMStrings();
+
+        document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem)
+        // don't need the class because the keypress happens on the global page
+        document.addEventListener('keypress', function (event) {
+            // older browsers use .which and don't have the keycode property
+            if (event.keyCode === 13 || event.which === 13) {
+                ctrlAddItem();
+            }
+
+        });
+
+    };
+
+
 
     var ctrlAddItem = function () {
         // 1. Get the input data
@@ -55,14 +70,15 @@ var controller = (function (budgetCtrl, UICtrl) {
 
     }
 
-    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem)
-    // don't need the class because the keypress happens on the global page
-    document.addEventListener('keypress', function (event) {
-        // older browsers use .which and don't have the keycode property
-        if (event.keyCode === 13 || event.which === 13) {
-            ctrlAddItem();
+    return {
+        // runs event listnerers
+        init: function () {
+            console.log('App has started.')
+            setupEventListners();
         }
-
-    })
+    }
 
 })(budgetController, UIController);
+
+// runs the application
+controller.init();
