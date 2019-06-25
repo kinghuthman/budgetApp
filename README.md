@@ -13,7 +13,7 @@ UI MODULE
 - Add the new item to the UI
 - Update the UI
 
-CONTROLLER MODULE
+CONTROLLER MODULE (The Place Where We Tell Other Modules What To Do)
 
 - Add event handler
 
@@ -36,10 +36,10 @@ of the functions that we want to be public/give the outside scope access to.
 
 Modules can also receive arguments.
 
----
-
 Separation of Concerns - each part of the application should only be interested
 in doing one thing independently.
+
+---
 
 ---
 
@@ -50,5 +50,11 @@ KEYPRESS EVENTS/EVENT OBJECT
 Keypress Event is a UI event.
 Using the console we can find what our keycode is of the key that was pressed.
 keycodes.atjayjo.com for reference
+
+---
+
+---
+
+READING DATA FROM DIFFERENT HTML INPUT TYPES
 
 ---
