@@ -33,3 +33,10 @@ IIFE allows to have data privacy because it creates a new scope that is not visi
 
 The secret of the Module Pattern is that it returns an object containing all
 of the functions that we want to be public/give the outside scope access to.
+
+Modules can also receive arguments.
+
+---
+
+Separation of Concerns - each part of the application should only be interested
+in doing one thing independently.
