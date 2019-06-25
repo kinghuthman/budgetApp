@@ -46,3 +46,9 @@ in doing one thing independently.
 KEYPRESS EVENTS/EVENT OBJECT
 
 ---
+
+Keypress Event is a UI event.
+Using the console we can find what our keycode is of the key that was pressed.
+keycodes.atjayjo.com for reference
+
+---
