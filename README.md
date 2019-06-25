@@ -40,3 +40,9 @@ Modules can also receive arguments.
 
 Separation of Concerns - each part of the application should only be interested
 in doing one thing independently.
+
+---
+
+KEYPRESS EVENTS/EVENT OBJECT
+
+---
