@@ -1,7 +1,18 @@
 // BUDGET CONTROLLER
 // handles budget data, IIFE
 var budgetController = (function () {
+    // Choosing to create objects because there will be lots of expenses
+    var Expense = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    }
 
+    var Income = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    }
 })();
 
 // UI CONTROLLER
@@ -38,7 +49,7 @@ var UIController = (function () {
 // control what happens to each event, then delegate tasks to the controllers
 var controller = (function (budgetCtrl, UICtrl) {
 
-    var setupEventListners = function () {
+    var setupEventListeners = function () {
         var DOM = UICtrl.getDOMStrings();
 
         document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem)
@@ -74,7 +85,7 @@ var controller = (function (budgetCtrl, UICtrl) {
         // runs event listnerers
         init: function () {
             console.log('App has started.')
-            setupEventListners();
+            setupEventListeners();
         }
     }
 
