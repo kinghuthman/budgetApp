@@ -66,3 +66,13 @@ INIT
 ---
 
 Creating a public initialization function to setup private event listeners to make sure they are executed.
+
+---
+
+---
+
+FUNCTION CONSTRUCTORS
+
+---
+
+New keyword creates a new empty object and then calls the function amd points to the the this keyword of that function to the new object that was created. When properties are set on the this keyword, we automatically set them on the new object that was created.
