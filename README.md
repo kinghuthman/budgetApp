@@ -75,4 +75,19 @@ FUNCTION CONSTRUCTORS
 
 ---
 
-New keyword creates a new empty object and then calls the function amd points to the the this keyword of that function to the new object that was created. When properties are set on the this keyword, we automatically set them on the new object that was created.
+New keyword creates a new empty object and then calls the function and points to the this keyword of that function to the new object that was created. When properties are set on the this keyword, we automatically set them on the new object that was created.
+
+---
+
+---
+
+AVOID CONFLICTS/PASSING DATA
+
+---
+
+When assigning ID to each new item, conflict will arise if the id is set to next ID, instead of last ID + 1
+//[1 2 3 4 5], next ID = 6
+//[1 2 4 6 8], next ID = 9
+// ID = last ID + 1
+
+Retrieved values inputed with query selectors, and added to the data structure by pushing on the new item as an object with properties(using a constructor) with a push method
