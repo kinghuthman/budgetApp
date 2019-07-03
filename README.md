@@ -91,3 +91,13 @@ When assigning ID to each new item, conflict will arise if the id is set to next
 // ID = last ID + 1
 
 Retrieved values inputed with query selectors, and added to the data structure by pushing on the new item as an object with properties(using a constructor) with a push method
+
+---
+
+---
+
+DOM MANIPULATION
+
+---
+
+insertAdjacentHTML can be used to update values within the dom. For this app, this was helpful, as I retrieved the data by setting the inputted info from the UI controller's getInput method to a newItem variable in the global controller. newItem uses addItem, a public method from the budget controller that adds the newItem to the data structure as an object using a constructor. This newItem is passed as an object in the addListItem method(from UI controller) and a type is retrieved from the input that was set thanks to the getInput method, all in the global controller. From there we have all of the necessary info from the object and type to update the proper placeholders and insert the new information using the insertAdjacentHTML method.
