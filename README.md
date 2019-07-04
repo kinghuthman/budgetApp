@@ -101,3 +101,18 @@ DOM MANIPULATION
 ---
 
 insertAdjacentHTML can be used to update values within the dom. For this app, this was helpful, as I retrieved the data by setting the inputted info from the UI controller's getInput method to a newItem variable in the global controller. newItem uses addItem, a public method from the budget controller that adds the newItem to the data structure as an object using a constructor. This newItem is passed as an object in the addListItem method(from UI controller) and a type is retrieved from the input that was set thanks to the getInput method, all in the global controller. From there we have all of the necessary info from the object and type to update the proper placeholders and insert the new information using the insertAdjacentHTML method.
+
+---
+
+---
+
+CLEAR INPUT FIELD/LIST, LOOPS, ARRAYS
+
+---
+
+querySelectorAll method returns a list.
+
+Use the call method to pass in the list as a variable to trick the method slice into thinking that the list is an array.
+Array.prototype.slice.call(list)
+
+forEach method loops over an array, able to pass a cb function that has 3 arguments. the first argument is the current element in the array, the second is the index of where that element is, and the third argument is the array itself.

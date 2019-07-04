@@ -1,14 +1,14 @@
 // BUDGET CONTROLLER
 // handles budget data, IIFE
-var budgetController = (function() {
+var budgetController = (function () {
   // Choosing to create objects because there will be lots of expenses
-  var Expense = function(id, description, value) {
+  var Expense = function (id, description, value) {
     this.id = id;
     this.description = description;
     this.value = value;
   };
 
-  var Income = function(id, description, value) {
+  var Income = function (id, description, value) {
     this.id = id;
     this.description = description;
     this.value = value;
@@ -27,7 +27,7 @@ var budgetController = (function() {
 
   return {
     // allows other modules to add new item into the data structure
-    addItem: function(type, des, val) {
+    addItem: function (type, des, val) {
       var newItem, ID;
       // unique # assinged to each new item added to inc/exp
       // 1st bracket gets the type, 2nd selects item, .id selects the id property
@@ -48,14 +48,14 @@ var budgetController = (function() {
       // allows other module/function to have direct access
       return newItem;
     },
-    testing: function() {
+    testing: function () {
       console.log(data);
     }
   };
 })();
 
 // UI CONTROLLER
-var UIController = (function() {
+var UIController = (function () {
   var DOMstrings = {
     inputType: '.add__type',
     inputDescription: '.add__description',
@@ -66,7 +66,7 @@ var UIController = (function() {
   };
 
   return {
-    getInput: function() {
+    getInput: function () {
       return {
         // type will be either inc or exp
         type: document.querySelector(DOMstrings.inputType).value,
@@ -75,7 +75,7 @@ var UIController = (function() {
       };
     },
     // add item to the dom
-    addListItem: function(obj, type) {
+    addListItem: function (obj, type) {
       var html, newHtml, element;
       // create HTML string with placeholder text
       if (type === 'inc') {
@@ -95,8 +95,22 @@ var UIController = (function() {
       // insert the html into the DOM
       document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
     },
+    clearFields: function () {
+      var fields, fieldsArr;
+      fields = document.querySelectorAll(DOMstrings.inputDescription + ',' +
+        DOMstrings.inputValue)
+
+      fieldsArr = Array.prototype.slice.call(fields);
+      /* pass a cb function into the method and then the cb function is applied
+       to each of the elements in the array */
+      fieldsArr.forEach(function (current, index, array) {
+        current.value = "";
+      })
+      // sets the focus on the first element of the array
+      fieldsArr[0].focus();
+    },
     //exposing the DOMstring Object into the public
-    getDOMStrings: function() {
+    getDOMStrings: function () {
       return DOMstrings;
     }
   };
@@ -107,13 +121,13 @@ var UIController = (function() {
 // different name for convenience
 // controller knows and can use the other two modules code
 // control what happens to each event, then delegate tasks to the controllers
-var controller = (function(budgetCtrl, UICtrl) {
-  var setupEventListeners = function() {
+var controller = (function (budgetCtrl, UICtrl) {
+  var setupEventListeners = function () {
     var DOM = UICtrl.getDOMStrings();
 
     document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
     // don't need the class because the keypress happens on the global page
-    document.addEventListener('keypress', function(event) {
+    document.addEventListener('keypress', function (event) {
       // older browsers use .which and don't have the keycode property
       if (event.keyCode === 13 || event.which === 13) {
         ctrlAddItem();
@@ -121,7 +135,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     });
   };
 
-  var ctrlAddItem = function() {
+  var ctrlAddItem = function () {
     var input, newItem;
     // 1. Get the input data from the UI controller
     input = UICtrl.getInput();
@@ -133,14 +147,17 @@ var controller = (function(budgetCtrl, UICtrl) {
     // 3. Add the item to the UI
     UICtrl.addListItem(newItem, input.type);
 
-    // 4. Calculate the budget
+    // 4. Clear the fields
+    UICtrl.clearFields()
 
-    // 5. Display the budget on the UI
+    // 5. Calculate the budget
+
+    // 6. Display the budget on the UI
   };
 
   return {
     // runs event listnerers
-    init: function() {
+    init: function () {
       console.log('App has started.');
       setupEventListeners();
     }
