@@ -116,3 +116,15 @@ Use the call method to pass in the list as a variable to trick the method slice 
 Array.prototype.slice.call(list)
 
 forEach method loops over an array, able to pass a cb function that has 3 arguments. the first argument is the current element in the array, the second is the index of where that element is, and the third argument is the array itself.
+
+---
+
+---
+
+CONVERT FIELD INPUTS TO NUMBERS/PREVENT FALSE INPUTS
+
+---
+
+Use parseFloat( ) to convert the value returned as a string into a number.
+
+If statement to prevent false inputs.
