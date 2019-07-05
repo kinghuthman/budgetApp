@@ -142,3 +142,21 @@ REUSABLE FUNCTIONS / SUM ELEMENTS OF ARRAY WITH FOREACH
 DOM MANIPULATION
 
 ---
+
+---
+
+EVENT DELEGATION
+
+---
+
+Event Bubbling - when an event is triggered on a DOM element, then the exact same event is also triggered on all of the parent elements. "The event bubbles up inside the DOM tree."
+
+Element that caused the event to happen is the target element.
+
+Event Delegation - attach an event handler to a parent element and wait for the event to bubble up from the target element and then do whatever was intended to the target element.
+
+    Use cases for event delegation, when we have an element with lots of child elements that we are interested in. Add event handler to parent element and then determine on which child element the event was fired.
+
+    Second use case, when we want want an event handler attached to an element that is not yet in the DOM when our page is loaded.
+
+Dom Traversing - use .parentNode
