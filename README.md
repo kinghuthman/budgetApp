@@ -136,3 +136,9 @@ If statement to prevent false inputs
 REUSABLE FUNCTIONS / SUM ELEMENTS OF ARRAY WITH FOREACH
 
 ---
+
+---
+
+DOM MANIPULATION
+
+---
