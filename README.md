@@ -127,4 +127,12 @@ CONVERT FIELD INPUTS TO NUMBERS/PREVENT FALSE INPUTS
 
 Use parseFloat( ) to convert the value returned as a string into a number.
 
-If statement to prevent false inputs.
+If statement to prevent false inputs
+
+---
+
+---
+
+REUSABLE FUNCTIONS / SUM ELEMENTS OF ARRAY WITH FOREACH
+
+---
