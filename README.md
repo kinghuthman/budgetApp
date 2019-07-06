@@ -160,3 +160,15 @@ Event Delegation - attach an event handler to a parent element and wait for the 
     Second use case, when we want want an event handler attached to an element that is not yet in the DOM when our page is loaded.
 
 Dom Traversing - use .parentNode
+
+---
+
+---
+
+DELETE FROM THE DATA STRUCTURE
+
+---
+
+Must find the index of the id we are looking to delete
+Can use the map method on a list of arrays to return a new array with a certain property or new property we are looking for or wanting to create, then we can use indexOf on that new array to find a specific index for an id in that list.
+Then use the splce method with that index.
