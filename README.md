@@ -172,3 +172,13 @@ DELETE FROM THE DATA STRUCTURE
 Must find the index of the id we are looking to delete
 Can use the map method on a list of arrays to return a new array with a certain property or new property we are looking for or wanting to create, then we can use indexOf on that new array to find a specific index for an id in that list.
 Then use the splce method with that index.
+
+---
+
+DELETE FROM THE UI DOM MANIPULATION
+
+---
+
+There's a remove child method but first you have to know the parent
+var el = document.getElementById(selectorID);
+el.parentNode.removeChild(document.getElementById(selectorID));

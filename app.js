@@ -153,6 +153,11 @@ var UIController = (function() {
       // insert the html into the DOM
       document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
     },
+    // selectorID is received from the global controller 'itemID'
+    deleteListItem: function(selectorID) {
+      var el = document.getElementById(selectorID);
+      el.parentNode.removeChild(document.getElementById(selectorID));
+    },
     clearFields: function() {
       var fields, fieldsArr;
       fields = document.querySelectorAll(
@@ -259,8 +264,10 @@ var controller = (function(budgetCtrl, UICtrl) {
       budgetCtrl.deleteItem(type, ID);
 
       // 2. Delete the item from the UI
+      UICtrl.deleteListItem(itemID);
 
       // 3. Update and show the new budget
+      updateBudget();
     }
   };
 
