@@ -215,3 +215,13 @@ STRING MANIPULATION
 ---
 
 Strings and numbers can have methods even if they are orginally primitive data types. Javascript automatically converts primitive numbers/strings to objects in order to use their methods?
+
+---
+
+---
+
+DATE OBJECT CONSTRUCTOR
+
+---
+
+Date Constructor has many methods within it's protototype that grants access to properties/elements of the Date

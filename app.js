@@ -147,7 +147,8 @@ var UIController = (function() {
     expenseLabel: '.budget__expenses--value',
     percentageLabel: '.budget__expenses--percentage',
     container: '.container',
-    expensesPercLabel: '.item__percentage'
+    expensesPercLabel: '.item__percentage',
+    dateLabel: '.budget__title--month'
   };
   var formatNumber = function(num, type) {
     var numSplit, int, dec, type;
@@ -272,6 +273,31 @@ var UIController = (function() {
         }
       });
     },
+    displayMonth: function() {
+      var now, year, month, monthNumber;
+      // with object constructors need to use the new keyword
+      now = new Date();
+      // now inherits a bunch of methods from the Date prototype
+      months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ];
+      monthNumber = now.getMonth();
+      month = months[monthNumber];
+      year = now.getFullYear();
+      document.querySelector(DOMstrings.dateLabel).textContent =
+        month + ' ' + year;
+    },
     //exposing the DOMstring Object into the public
     getDOMStrings: function() {
       return DOMstrings;
@@ -371,6 +397,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     // runs event listnerers
     init: function() {
       console.log('App has started.');
+      UICtrl.displayMonth();
       UICtrl.displayBudget({
         budget: 0,
         totalInc: 0,
