@@ -225,3 +225,11 @@ DATE OBJECT CONSTRUCTOR
 ---
 
 Date Constructor has many methods within it's protototype that grants access to properties/elements of the Date
+
+---
+
+---
+
+POLISH UI/UX / CHANGE EVENTS
+
+---
