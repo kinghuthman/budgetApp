@@ -205,3 +205,13 @@ UI CONTROLLER / forEACH FUNCTION FOR nodeLISTS
 
 When the nodeListForEach function is called, the callback function is passed and the list is looped over, for each iteration the callback function gets called on each of those elements in the list.
 The callback function has access to the current element and index because those arguments are passed within the forloop of the nodeListForEach function
+
+---
+
+---
+
+STRING MANIPULATION
+
+---
+
+Strings and numbers can have methods even if they are orginally primitive data types. Javascript automatically converts primitive numbers/strings to objects in order to use their methods?
