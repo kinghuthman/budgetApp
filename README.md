@@ -182,3 +182,15 @@ DELETE FROM THE UI DOM MANIPULATION
 There's a remove child method but first you have to know the parent
 var el = document.getElementById(selectorID);
 el.parentNode.removeChild(document.getElementById(selectorID));
+
+---
+
+---
+
+UPDATE THE PERCENTAGES
+
+---
+
+Used a forEach method to calculate the percentage of each element and then a map method to retrieve each percentage in another method created through the expense prototype.
+Added this.percentage to the expense constructor.
+Two methods were exposed from the budget controller using the two methods to calc and get the percentages. This is then added to the global controller.
