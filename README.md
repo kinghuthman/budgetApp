@@ -194,3 +194,14 @@ UPDATE THE PERCENTAGES
 Used a forEach method to calculate the percentage of each element and then a map method to retrieve each percentage in another method created through the expense prototype.
 Added this.percentage to the expense constructor.
 Two methods were exposed from the budget controller using the two methods to calc and get the percentages. This is then added to the global controller.
+
+---
+
+---
+
+UI CONTROLLER / forEACH FUNCTION FOR nodeLISTS
+
+---
+
+When the nodeListForEach function is called, the callback function is passed and the list is looped over, for each iteration the callback function gets called on each of those elements in the list.
+The callback function has access to the current element and index because those arguments are passed within the forloop of the nodeListForEach function
